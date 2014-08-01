@@ -22,13 +22,13 @@ compl = []
 def comp(i):
     for x in i:
 	if 'A' in x:
-	    compl.append('T')
+	    compl.append('\033[1;34mT\033[1;m')
     	if 'T' in x:
-	    compl.append('A')
+	    compl.append('\033[1;31mA\033[1;m')
     	if 'G' in x:
-	    compl.append('C')
+	    compl.append('\033[1;33mC\033[1;m')
     	if 'C' in x:
-	    compl.append('G')
+	    compl.append('\033[1;32mG\033[1;m')
 
 comp(seq)
 print "\nThe compliment is", 
@@ -38,9 +38,9 @@ print ''.join(compl[::-1])
 
 gc_cnt = (g_cnt + c_cnt)
 at_cnt = (a_cnt + t_cnt)
-print "\nGC count is", gc_cnt
-print "AT count is", at_cnt
+print "\n\033[1;32mG\033[1;m\033[1;33mC\033[1;m count is", gc_cnt
+print "\033[1;31mA\033[1;m\033[1;34mT\033[1;m count is", at_cnt
 
 total = len(seq)
 gc_prcnt = 100 * (float(gc_cnt) / float(total))
-print "GC content is", gc_prcnt, "%."
+print "\n\033[1;32mG\033[1;m\033[1;33mC\033[1;m content is", gc_prcnt, "%."
